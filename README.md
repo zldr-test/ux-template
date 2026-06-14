@@ -21,7 +21,7 @@ Click **"Use this template"** on GitHub to create a new repository from this sca
 ### 2. Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 The `postinstall` script automatically pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`, so your Claude Code agent will be set up with the correct skills out of the box.
@@ -31,7 +31,7 @@ The `postinstall` script automatically pulls and runs the Sage UX skills install
 ### 3. Start Storybook
 
 ```bash
-npm run storybook
+pnpm storybook
 ```
 
 Storybook runs at [http://localhost:6006](http://localhost:6006).
@@ -40,10 +40,10 @@ Storybook runs at [http://localhost:6006](http://localhost:6006).
 
 | Command | Description |
 |---|---|
-| `npm run storybook` | Start Storybook dev server on port 6006 |
-| `npm run build-storybook` | Build static Storybook for deployment |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run format` | Format all `.ts`, `.tsx`, `.css` files with Prettier |
+| `pnpm storybook` | Start Storybook dev server on port 6006 |
+| `pnpm build-storybook` | Build static Storybook for deployment |
+| `pnpm typecheck` | Run TypeScript type checking |
+| `pnpm format` | Format all `.ts`, `.tsx`, `.css` files with Prettier |
 
 ## Project structure
 
