@@ -11,6 +11,7 @@ A GitHub template repository with everything you need to start exploring **GenUI
 - **Tailwind CSS v4** — utility classes, configured alongside Fusion components
 - **Prettier** — opinionated formatter pre-configured for `.ts`, `.tsx`, and `.css`
 - **TypeScript** — strict config with separate app and node targets
+- **[ux-skills](https://github.com/Sage-ERP-X3/ux-skills)** — Sage UX agent skills pre-installed for your AI coding agent (brand, content, accessibility, responsive design)
 
 ## Getting started
 
