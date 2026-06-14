@@ -70,6 +70,47 @@ src/
 - Import component styles from `@sage/xtrem-fusion-components/styles.css`.
 - Import base tokens from `@sage/xtrem-fusion-components/styles/base.css`.
 
+## MCP servers
+
+MCP (Model Context Protocol) servers extend your AI coding agent with real-time context. This template pre-configures the following servers in `.claude/settings.json`:
+
+### Agentation
+
+[Agentation](https://www.agentation.com) enables real-time annotation syncing and bidirectional communication between your app and your AI agent.
+
+The `agentation` package is already included as a dev dependency and the `<Agentation>` component is mounted in the Storybook preview (dev-only). To activate the MCP server, add it to your agent config:
+
+```bash
+npx agentation-mcp init
+```
+
+Or manually add to `.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "agentation": {
+      "command": "npx",
+      "args": ["-y", "agentation-mcp", "server"]
+    }
+  }
+}
+```
+
+Then start the server before opening Storybook:
+
+```bash
+npx agentation-mcp server
+```
+
+Verify the setup with:
+
+```bash
+npx agentation-mcp doctor
+```
+
+The server runs on port `4747` by default.
+
 ## Node version
 
 Requires **Node ≥ 20.9.0**.

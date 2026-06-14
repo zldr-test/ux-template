@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react-vite"
+import { Agentation } from "agentation"
 import "../src/index.css"
 import "@sage/xtrem-fusion-components/styles.css"
 
@@ -33,7 +34,14 @@ const preview: Preview = {
       const theme = context.globals["fusionTheme"] as string
       document.documentElement.dataset.theme = theme
 
-      return <Story />
+      return (
+        <>
+          {import.meta.env.DEV && (
+            <Agentation endpoint="http://localhost:4747" />
+          )}
+          <Story />
+        </>
+      )
     },
   ],
 }
