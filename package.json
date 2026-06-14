@@ -8,6 +8,7 @@
   },
   "scripts": {
     "postinstall": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force",
+    "skills": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "typecheck": "tsc --noEmit",

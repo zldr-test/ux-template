@@ -28,6 +28,14 @@ The `postinstall` script automatically pulls and runs the Sage UX skills install
 
 > Requires `gh` (GitHub CLI) to be authenticated: `gh auth login`
 
+To refresh skills later (e.g. after an update to `ux-skills`), run:
+
+```bash
+pnpm run skills
+```
+
+> Skip this if you just ran `pnpm install` — `postinstall` already ran it for you.
+
 ### 3. Start Storybook
 
 ```bash
@@ -44,6 +52,7 @@ Storybook runs at [http://localhost:6006](http://localhost:6006).
 | `pnpm build-storybook` | Build static Storybook for deployment |
 | `pnpm typecheck` | Run TypeScript type checking |
 | `pnpm format` | Format all `.ts`, `.tsx`, `.css` files with Prettier |
+| `pnpm run skills` | Refresh Claude Code agent skills from `ux-skills` |
 
 ## Project structure
 
