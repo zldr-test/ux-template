@@ -25,7 +25,7 @@ Click **"Use this template"** on GitHub to create a new repository from this sca
 pnpm install
 ```
 
-The `postinstall` script automatically pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`, so your Claude Code agent will be set up with the correct skills out of the box.
+The `postinstall` script automatically pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`, and registers the Agentation MCP server with your AI coding agent — so everything is wired up out of the box.
 
 > Requires `gh` (GitHub CLI) to be authenticated: `gh auth login`
 
@@ -78,26 +78,9 @@ MCP (Model Context Protocol) servers extend your AI coding agent with real-time 
 
 [Agentation](https://www.agentation.com) enables real-time annotation syncing and bidirectional communication between your app and your AI agent.
 
-The `agentation` package is already included as a dev dependency and the `<Agentation>` component is mounted in the Storybook preview (dev-only). To activate the MCP server, add it to your agent config:
+The `agentation` package is included as a dev dependency, the `<Agentation>` component is mounted in the Storybook preview (dev-only), and the MCP server is registered automatically on `pnpm install` via `npx add-mcp`.
 
-```bash
-npx agentation-mcp init
-```
-
-Or manually add to `.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "agentation": {
-      "command": "npx",
-      "args": ["-y", "agentation-mcp", "server"]
-    }
-  }
-}
-```
-
-Then start the server before opening Storybook:
+Start the server before opening Storybook:
 
 ```bash
 npx agentation-mcp server
