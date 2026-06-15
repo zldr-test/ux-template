@@ -25,7 +25,10 @@ Click **"Use this template"** on GitHub to create a new repository from this sca
 pnpm install
 ```
 
-The `postinstall` script automatically pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`, and registers the Agentation MCP server with your AI coding agent — so everything is wired up out of the box.
+The `postinstall` script automatically:
+1. Pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`
+2. Registers the Agentation MCP server with your AI coding agent
+3. **Launches Storybook** at [http://localhost:6006](http://localhost:6006) — so you're ready to go immediately
 
 > Requires `gh` (GitHub CLI) to be authenticated: `gh auth login`
 
@@ -36,14 +39,6 @@ pnpm run skills
 ```
 
 > Skip this if you just ran `pnpm install` — `postinstall` already ran it for you.
-
-### 3. Start Storybook
-
-```bash
-pnpm storybook
-```
-
-Storybook runs at [http://localhost:6006](http://localhost:6006).
 
 ## Scripts
 
