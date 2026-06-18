@@ -28,9 +28,16 @@ pnpm install
 The `postinstall` script automatically:
 1. Pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`
 2. Registers the Agentation MCP server with your AI coding agent
-3. **Launches Storybook** at [http://localhost:6006](http://localhost:6006) — so you're ready to go immediately
 
 > Requires `gh` (GitHub CLI) to be authenticated: `gh auth login`
+
+### 3. Start Storybook
+
+```bash
+pnpm storybook
+```
+
+Storybook will be available at [http://localhost:6006](http://localhost:6006).
 
 To refresh skills later (e.g. after an update to `ux-skills`), run:
 
