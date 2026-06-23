@@ -32,9 +32,9 @@ function ExampleScreen() {
           fontSize: "var(--font-size-300)",
         }}
       >
-        Replace this with your screen. Use <code>@sage/xtrem-fusion-components</code> for
-        components and <code>@sage/design-tokens</code> CSS variables for all colors,
-        spacing, and typography — never hardcode values.
+        Replace this with your screen. Use <code>@sage/xtrem-fusion-components</code> for components
+        and <code>@sage/design-tokens</code> CSS variables for all colors, spacing, and typography —
+        never hardcode values.
       </p>
     </div>
   )

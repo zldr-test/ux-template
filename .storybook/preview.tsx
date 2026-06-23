@@ -31,14 +31,12 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const theme = context.globals["fusionTheme"] as string
+      const theme = context.globals.fusionTheme as string
       document.documentElement.dataset.theme = theme
 
       return (
         <>
-          {import.meta.env.DEV && (
-            <Agentation endpoint="http://localhost:4747" />
-          )}
+          {import.meta.env.DEV && <Agentation endpoint="http://localhost:4747" />}
           <Story />
         </>
       )

@@ -9,7 +9,7 @@ A GitHub template repository with everything you need to start exploring **GenUI
 - **`@sage/xtrem-fusion-components`** — full Sage Fusion component library
 - **`@sage/design-tokens`** — Sage design tokens (color, spacing, typography, elevation) as CSS variables
 - **Tailwind CSS v4** — utility classes, configured alongside Fusion components
-- **Prettier** — opinionated formatter pre-configured for `.ts`, `.tsx`, and `.css`
+- **[Ultracite](https://www.ultracite.ai)** — zero-config Biome preset for linting and formatting, with AI agent rules pre-generated
 - **TypeScript** — strict config with separate app and node targets
 - **[ux-skills](https://github.com/Sage-ERP-X3/ux-skills)** — Sage UX agent skills pre-installed for your AI coding agent (brand, content, accessibility, responsive design)
 
@@ -54,7 +54,8 @@ pnpm run skills
 | `pnpm storybook` | Start Storybook dev server on port 6006 |
 | `pnpm build-storybook` | Build static Storybook for deployment |
 | `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm format` | Format all `.ts`, `.tsx`, `.css` files with Prettier |
+| `pnpm format` | Lint and auto-fix all files with Ultracite/Biome |
+| `pnpm check` | Lint without writing changes |
 | `pnpm run skills` | Refresh Claude Code agent skills from `ux-skills` |
 
 ## Project structure
@@ -95,6 +96,17 @@ npx agentation-mcp doctor
 ```
 
 The server runs on port `4747` by default.
+
+## Linting & formatting
+
+This template uses [Ultracite](https://www.ultracite.ai) (a Biome preset) for linting and formatting. `pnpm install` installs the `ultracite` and `@biomejs/biome` packages, and `biome.jsonc` is already committed — no setup script to run.
+
+The one manual step: **install the [Biome VS Code extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)** (or your editor's Biome plugin) so format-on-save works. VS Code users will get an "install recommended extensions" prompt from `.vscode/extensions.json` on first open.
+
+```bash
+pnpm format   # lint + auto-fix
+pnpm check    # lint only, no changes
+```
 
 ## Node version
 
