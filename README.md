@@ -116,11 +116,13 @@ Requires **Node ≥ 20.9.0**.
 
 ### `ERR_PNPM_IGNORED_BUILDS` (esbuild) on `pnpm install`
 
-This template's `pnpm-workspace.yaml` allowlists `esbuild` via `onlyBuiltDependencies` so its install script runs automatically. If you templated this repo before that fix landed, or copied files manually instead of using **"Use this template"**, your repo may be missing `pnpm-workspace.yaml`. Add it back:
+This template's `pnpm-workspace.yaml` allowlists `esbuild`'s install script via both `onlyBuiltDependencies` (older pnpm) and `allowBuilds` (pnpm 11+, which requires an explicit `true`/`false` per package — `onlyBuiltDependencies` alone is no longer enough). If you templated this repo before that fix landed, or copied files manually instead of using **"Use this template"**, your repo may be missing `pnpm-workspace.yaml`. Add it back:
 
 ```yaml
 onlyBuiltDependencies:
   - esbuild
+allowBuilds:
+  esbuild: true
 ```
 
 then re-run `pnpm install`.
