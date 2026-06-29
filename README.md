@@ -97,6 +97,10 @@ npx agentation-mcp doctor
 
 The server runs on port `4747` by default.
 
+### Optional Figma MCP
+
+This template also includes a guided Figma MCP onboarding flow. If a user wants Figma-backed help, `/start` will explain the setup and offer to connect their personal Figma account. The connection is optional and persists in the user's global MCP config, so the template still works when it is skipped.
+
 ## Linting & formatting
 
 This template uses [Ultracite](https://www.ultracite.ai) (a Biome preset) for linting and formatting. `pnpm install` installs the `ultracite` and `@biomejs/biome` packages, and `biome.jsonc` is already committed — no setup script to run.
