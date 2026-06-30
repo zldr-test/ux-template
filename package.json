@@ -25,6 +25,7 @@
   "scripts": {
     "postinstall": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force && npx add-mcp \"npx -y agentation-mcp server\" --all --yes",
     "skills": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force",
+    "wizard:figma-mcp": "bash scripts/wizards/figma-mcp.sh",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "typecheck": "tsc --noEmit",
