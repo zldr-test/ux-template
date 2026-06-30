@@ -233,11 +233,12 @@ fi
 
 stage "Verify setup" 2
 say "Confirm the server appears in your MCP registry."
-if command -v npx >/dev/null 2>&1 && npx add-mcp list | grep -Fq "$FIGMA_MCP_NAME"; then
-  note "found $FIGMA_MCP_NAME in the MCP list"
+say "This wizard installs globally, so it must be visible in the global MCP list."
+if command -v npx >/dev/null 2>&1 && npx add-mcp list --global | grep -Fq "$FIGMA_MCP_NAME"; then
+  note "found $FIGMA_MCP_NAME in the global MCP list"
 else
   warn "could not verify automatically"
-  note "run: npx add-mcp list"
+  note "run: npx add-mcp list --global"
 fi
 
 finish

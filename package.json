@@ -23,7 +23,7 @@
   },
   "name": "ux-template",
   "scripts": {
-    "postinstall": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force && npx add-mcp \"npx -y agentation-mcp server\" --all --yes",
+    "postinstall": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force && (npx add-mcp \"npx -y agentation-mcp server\" --all --yes || { printf '%s\n' 'Cursor MCP setup skipped: fix ~/.cursor/mcp.json permissions or run add-mcp manually.'; })",
     "skills": "gh api repos/Sage-ERP-X3/ux-skills/contents/install.sh -H \"Accept: application/vnd.github.raw\" | bash -s -- --force",
     "wizard:figma-mcp": "bash scripts/wizards/figma-mcp.sh",
     "storybook": "storybook dev -p 6006",
