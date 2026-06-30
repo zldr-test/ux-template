@@ -11,7 +11,7 @@ A GitHub template repository with everything you need to start exploring **GenUI
 - **Tailwind CSS v4** — utility classes, configured alongside Fusion components
 - **[Ultracite](https://www.ultracite.ai)** — zero-config Biome preset for linting and formatting, with AI agent rules pre-generated
 - **TypeScript** — strict config with separate app and node targets
-- **[ux-skills](https://github.com/Sage-ERP-X3/ux-skills)** — Sage UX agent skills pre-installed for your AI coding agent (brand, content, accessibility, responsive design)
+- **[ux-skills](https://github.com/Sage-ERP-X3/ux-skills)** — Sage UX agent skills can be installed for your AI coding agent when the repo is available (brand, content, accessibility, responsive design)
 
 ## Getting started
 
@@ -26,10 +26,13 @@ pnpm install
 ```
 
 The `postinstall` script automatically:
-1. Pulls and runs the Sage UX skills installer from `Sage-ERP-X3/ux-skills`
-2. Registers the Agentation MCP server with your AI coding agent
+1. Registers the Agentation MCP server in the supported agent configs
+2. Optionally pulls and runs the Sage UX skills installer when `UX_SKILLS_REPO=owner/repo` is set
 
 > Requires `gh` (GitHub CLI) to be authenticated: `gh auth login`
+>
+> To point at a different skills repo, set `UX_SKILLS_REPO=owner/repo` before running `pnpm install` or `pnpm run skills`.
+> If the variable is unset, the install step skips skills setup and continues.
 
 ### 3. Start Storybook
 
@@ -45,7 +48,7 @@ To refresh skills later (e.g. after an update to `ux-skills`), run:
 pnpm run skills
 ```
 
-> Skip this if you just ran `pnpm install` — `postinstall` already ran it for you.
+> Skip this if you just ran `pnpm install` and the skills repo was available. Otherwise the script prints a warning and continues.
 
 ## Scripts
 
